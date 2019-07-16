@@ -1,0 +1,433 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.训练模型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5_evaluating.html" />
+    
+    
+    <link rel="prev" href="3_preparing_dataset.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    2.数据探索
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="2_1_collecting_dataset.html">
+            
+                <a href="2_1_collecting_dataset.html">
+            
+                    
+                    2.1 获取数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="2_2_import_dataset.html">
+            
+                <a href="2_2_import_dataset.html">
+            
+                    
+                    2.2 导入数据集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="2_3_explore_data.html">
+            
+                <a href="2_3_explore_data.html">
+            
+                    
+                    2.3 数据探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="2_4_data_selected.html">
+            
+                <a href="2_4_data_selected.html">
+            
+                    
+                    2.4 整理数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="code/code01_iris_dataset_explore.html">
+            
+                <a href="code/code01_iris_dataset_explore.html">
+            
+                    
+                    2.5 数据探索代码清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="3_preparing_dataset.html">
+            
+                <a href="3_preparing_dataset.html">
+            
+                    
+                    3.数据预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="4_training.html">
+            
+                <a href="4_training.html">
+            
+                    
+                    4.训练模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="5_evaluating.html">
+            
+                <a href="5_evaluating.html">
+            
+                    
+                    5.评估模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="6_predicting.html">
+            
+                <a href="6_predicting.html">
+            
+                    
+                    6.使用模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="code/code02_iris_linear.html">
+            
+                <a href="code/code02_iris_linear.html">
+            
+                    
+                    7.鸢尾花二分类代码清单V0.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7_adjustment.html">
+            
+                <a href="7_adjustment.html">
+            
+                    
+                    8.调整模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="code03_iris_logistics.md">
+            
+                <span>
+            
+                    
+                    9.鸢尾花二分类代码清单v1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >4.训练模型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="4&#x8BAD;&#x7EC3;&#x6A21;&#x578B;">4.&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</h1>
+<h2 id="41-&#x5EFA;&#x7ACB;&#x6A21;&#x578B;">4.1 &#x5EFA;&#x7ACB;&#x6A21;&#x578B;</h2>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x642D;&#x5EFA;&#x4E00;&#x4E2A;&#x6700;&#x7B80;&#x5355;&#x7684; <code>&#x7EBF;&#x6027;&#x6A21;&#x578B;</code> &#x6765;&#x8FDB;&#x884C;&#x9E22;&#x5C3E;&#x82B1;&#x7684; <code>&#x4E8C;&#x5206;&#x7C7B;</code>&#x3002;&#x5373;&#x6C42; <code>&#x4E00;&#x6761;&#x76F4;&#x7EBF;</code> &#x6765;&#x533A;&#x5206;&#x76EE;&#x524D;&#x5B58;&#x5728;&#x7684;&#x4E24;&#x79CD;&#x70B9;&#xFF1A;</p>
+<p>&#x5728;keras&#x4E2D;&#x642D;&#x5EFA;&#x7EBF;&#x6027;&#x6A21;&#x578B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x52A0;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7F51;&#x7EDC;&#x5C42; <a href="https://keras.io/zh/layers/core/" target="_blank">Dense</a> &#x5373;&#x53EF;&#x3002;&#x5728;Dense&#x4E2D;&#xFF0C;&#x53C2;&#x6570;<code>unit</code>&#x4EE3;&#x8868;&#x8F93;&#x51FA;&#x7684;&#x7EF4;&#x5EA6;&#xFF0C;&#x53C2;&#x6570;<code>input_dim</code>&#x4EE3;&#x8868;&#x8F93;&#x5165;&#x7684;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p>&#x9488;&#x5BF9;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8F93;&#x5165;<code>2</code>&#x4E2A;&#x7279;&#x5F81;&#xFF08;petal_length , petal_width&#xFF09;&#xFF0C;&#x8F93;&#x51FA;<code>1</code>&#x4E2A;&#x7C7B;&#x522B;&#xFF08;0&#x4EE3;&#x8868;setosa&#xFF0C;1&#x4EE3;&#x8868;versicolor&#xFF09;</p>
+<p>&#x9009;&#x4E2D; <code>3.&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x642D;&#x5EFA;&#x6A21;&#x578B;</span>
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Dense(units=<span class="hljs-number">1</span>, input_dim=<span class="hljs-number">2</span>))
+model.summary()  <span class="hljs-comment"># &#x67E5;&#x770B;&#x6A21;&#x578B;&#x7ED3;&#x6784;</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x540E;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x6A21;&#x578B;&#x7684;&#x6458;&#x8981;&#xFF1A;</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g4xae5ip4jj30g304g0t3.jpg" alt="&#x6A21;&#x578B;&#x6458;&#x8981;"></p>
+<h2 id="42-&#x7F16;&#x8BD1;&#x6A21;&#x578B;">4.2 &#x7F16;&#x8BD1;&#x6A21;&#x578B;</h2>
+<p>&#x9488;&#x5BF9;&#x7EBF;&#x6027;&#x6A21;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x7528;<a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%B7%AE/1415772?fromtitle=%E5%9D%87%E6%96%B9%E5%B7%AE&amp;fromid=5458588" target="_blank">&#x5747;&#x65B9;&#x5DEE;</a>&#x4F5C;&#x4E3A;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;<a href="https://www.jiqizhixin.com/graph/technologies/8e284b12-a865-4915-adda-508a320eefde" target="_blank">&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</a>&#x4F5C;&#x4E3A;&#x4F18;&#x5316;&#x5668;&#x6765;&#x7F16;&#x8BD1;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x578B;&#x3002;</p>
+<p>&#x7EE7;&#x7EED;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x6A21;&#x578B;&#x7F16;&#x8BD1;&#x7684;&#x8BED;&#x53E5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x7F16;&#x8BD1;&#x6A21;&#x578B;</span>
+model.compile(optimizer=<span class="hljs-string">&apos;sgd&apos;</span>, loss=<span class="hljs-string">&apos;mse&apos;</span>)
+</code></pre>
+<h2 id="43-&#x8BAD;&#x7EC3;&#x6A21;&#x578B;">4.3 &#x8BAD;&#x7EC3;&#x6A21;&#x578B;</h2>
+<p>&#x7EE7;&#x7EED;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x6A21;&#x578B;&#x7F16;&#x8BD1;&#x7684;&#x8BED;&#x53E5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BAD;&#x7EC3;&#x6A21;&#x578B;</span>
+model.fit(X_train, y_train, epochs=<span class="hljs-number">100</span>)
+</code></pre>
+<p><a href="https://keras.io/zh/models/model/#fit" target="_blank">fit</a> &#x51FD;&#x6570;&#x7528;&#x6765;&#x8BAD;&#x7EC3;model&#xFF0C;&#x5FC5;&#x8981;&#x7684;&#x53C2;&#x6570;&#x4E3A;<code>&#x7279;&#x5F81;</code>&#x548C;<code>&#x6807;&#x7B7E;</code>&#x3002;<code>epochs</code> &#x4EE3;&#x8868;&#x8BAD;&#x7EC3;&#x7684; <code>&#x8F6E;&#x6570;</code>&#x3002;</p>
+<p>&#x8BAD;&#x7EC3;&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4xj7sv868j30j409amyp.jpg" alt="&#x8BAD;&#x7EC3;&#x7ED3;&#x679C;&#x7684;&#x90E8;&#x5206;&#x622A;&#x56FE;"></p>
+<h3 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h3>
+<p>1.Keras&#x4E2D;&#x6587;&#x6587;&#x6863; <a href="https://keras.io/zh/" target="_blank">https://keras.io/zh/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3_preparing_dataset.html" class="navigation navigation-prev " aria-label="Previous page: 3.数据预处理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5_evaluating.html" class="navigation navigation-next " aria-label="Next page: 5.评估模型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.训练模型","level":"1.4","depth":1,"next":{"title":"5.评估模型","level":"1.5","depth":1,"path":"5_evaluating.md","ref":"5_evaluating.md","articles":[]},"previous":{"title":"3.数据预处理","level":"1.3","depth":1,"path":"3_preparing_dataset.md","ref":"3_preparing_dataset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"4_training.md","mtime":"2019-07-13T00:11:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T07:39:26.964Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
