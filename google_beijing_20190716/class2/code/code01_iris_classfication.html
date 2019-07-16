@@ -1,0 +1,550 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>附录 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../7_predicting.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../2_import_dataset.html">
+            
+                <a href="../2_import_dataset.html">
+            
+                    
+                    2.导入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../3_preparing_dataset.html">
+            
+                <a href="../3_preparing_dataset.html">
+            
+                    
+                    3.数据预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../4_training.html">
+            
+                <a href="../4_training.html">
+            
+                    
+                    4.训练模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../5_evaluating.html">
+            
+                <a href="../5_evaluating.html">
+            
+                    
+                    5.评估模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../6_adjustment.html">
+            
+                <a href="../6_adjustment.html">
+            
+                    
+                    6.调整模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../7_predicting.html">
+            
+                <a href="../7_predicting.html">
+            
+                    
+                    7.使用模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="code01_iris_classfication.html">
+            
+                <a href="code01_iris_classfication.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >附录</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9E22;&#x5C3E;&#x82B1;&#x7684;&#x5206;&#x7C7B;">&#x9E22;&#x5C3E;&#x82B1;&#x7684;&#x5206;&#x7C7B;</h1>
+<pre><code class="lang-python"><span class="hljs-comment">## &#x5BFC;&#x5305;</span>
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+
+<span class="hljs-keyword">from</span> keras.utils <span class="hljs-keyword">import</span> np_utils
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> LabelEncoder
+<span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split
+</code></pre>
+<pre><code>Using TensorFlow backend.
+</code></pre><pre><code class="lang-python"><span class="hljs-comment">## &#x8D85;&#x53C2;&#x6570;</span>
+epochs=<span class="hljs-number">500</span>
+validation_split=<span class="hljs-number">0.05</span>
+test_size=<span class="hljs-number">0.25</span>
+dense1_neurons =<span class="hljs-number">512</span> <span class="hljs-comment">#&#x7B2C;&#x4E00;&#x5C42;&#x795E;&#x7ECF;&#x5143;&#x7684;&#x6570;&#x91CF;</span>
+dense2_neurons =<span class="hljs-number">256</span> <span class="hljs-comment">#&#x7B2C;&#x4E8C;&#x5C42;&#x795E;&#x7ECF;&#x5143;&#x7684;&#x6570;&#x91CF;</span>
+dense3_neurons =<span class="hljs-number">128</span> <span class="hljs-comment">#&#x7B2C;&#x4E09;&#x5C42;&#x795E;&#x7ECF;&#x5143;&#x7684;&#x6570;&#x91CF;</span>
+</code></pre>
+<h2 id="1&#x63D0;&#x51FA;&#x95EE;&#x9898;">1.&#x63D0;&#x51FA;&#x95EE;&#x9898;</h2>
+<p>&#x6839;&#x636E;&#x6574;&#x7406;&#x597D;&#x7684;&#x9E22;&#x5C3E;&#x82B1;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x80FD;&#x591F;&#x8FDB;&#x884C;&#x4E09;&#x79CD;&#x9E22;&#x5C3E;&#x82B1;&#x7684;&#x5206;&#x7C7B;&#x3002;</p>
+<h2 id="2&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;">2.&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;</h2>
+<h3 id="21-&#x5BFC;&#x5165;&#x6570;&#x636E;&#x96C6;">2.1 &#x5BFC;&#x5165;&#x6570;&#x636E;&#x96C6;</h3>
+<pre><code class="lang-python">datasets_path = <span class="hljs-string">&apos;data/iris.data&apos;</span>
+iris = pd.read_csv(datasets_path,header=<span class="hljs-keyword">None</span>)
+print(iris.sample(<span class="hljs-number">5</span>))
+</code></pre>
+<pre><code>       0    1    2    3                4
+33   5.5  4.2  1.4  0.2      Iris-setosa
+85   6.0  3.4  4.5  1.6  Iris-versicolor
+135  7.7  3.0  6.1  2.3   Iris-virginica
+64   5.6  2.9  3.6  1.3  Iris-versicolor
+0    5.1  3.5  1.4  0.2      Iris-setosa
+</code></pre><h3 id="22-&#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;">2.2 &#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_ndarray_random_rows</span><span class="hljs-params">(array_name,rows=<span class="hljs-number">5</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x529F;&#x80FD;&#xFF1A;&#x8F93;&#x51FA;numpy ndarray &#x7684;&#x968F;&#x673A;&#x51E0;&#x884C;
+    &#x53C2;&#x6570;&#xFF1A;array_name &#x6570;&#x7EC4;&#x540D;&#x79F0;
+         rows &#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x5E26;&#x5165;&#x503C;&#x65F6;&#x9ED8;&#x8BA4;&#x4E3A;5
+    &apos;&apos;&apos;</span>
+    <span class="hljs-keyword">if</span> array_name.ndim &gt;<span class="hljs-number">1</span> :
+        print(array_name[np.random.choice(array_name.shape[<span class="hljs-number">0</span>], rows, replace=<span class="hljs-keyword">False</span>), :])
+    <span class="hljs-keyword">else</span>:
+        print(array_name[np.random.choice(array_name.shape[<span class="hljs-number">0</span>], rows, replace=<span class="hljs-keyword">False</span>)])
+    <span class="hljs-keyword">return</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8F6C;&#x6362;&#x4E3A;np.array</span>
+iris = np.array(iris)
+print(<span class="hljs-string">&quot;\n=====&#x6570;&#x636E;&#x96C6;&#x62BD;&#x6837;&#x663E;&#x793A;=====&quot;</span>)
+print_ndarray_random_rows(iris)
+
+<span class="hljs-comment"># &#x63D0;&#x53D6;&#x7279;&#x5F81;</span>
+X= iris[:,<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]
+print(<span class="hljs-string">&quot;\n=====&#x7279;&#x5F81;&#x62BD;&#x6837;&#x663E;&#x793A;=====&quot;</span>)
+print_ndarray_random_rows(X)
+
+<span class="hljs-comment"># &#x63D0;&#x53D6;&#x6807;&#x7B7E;</span>
+Y = iris[:,<span class="hljs-number">4</span>]
+print(<span class="hljs-string">&quot;\n=====&#x6807;&#x7B7E;&#x62BD;&#x6837;&#x663E;&#x793A;=====&quot;</span>)
+print_ndarray_random_rows(Y)
+</code></pre>
+<pre><code>=====&#x6570;&#x636E;&#x96C6;&#x62BD;&#x6837;&#x663E;&#x793A;=====
+[[7.2 3.2 6.0 1.8 &apos;Iris-virginica&apos;]
+ [4.7 3.2 1.6 0.2 &apos;Iris-setosa&apos;]
+ [5.9 3.0 4.2 1.5 &apos;Iris-versicolor&apos;]
+ [5.0 3.4 1.5 0.2 &apos;Iris-setosa&apos;]
+ [4.6 3.4 1.4 0.3 &apos;Iris-setosa&apos;]]
+
+=====&#x7279;&#x5F81;&#x62BD;&#x6837;&#x663E;&#x793A;=====
+[[5.0 3.4 1.5 0.2]
+ [5.7 4.4 1.5 0.4]
+ [5.7 2.8 4.5 1.3]
+ [7.2 3.0 5.8 1.6]
+ [4.9 2.5 4.5 1.7]]
+
+=====&#x6807;&#x7B7E;&#x62BD;&#x6837;&#x663E;&#x793A;=====
+[&apos;Iris-virginica&apos; &apos;Iris-virginica&apos; &apos;Iris-virginica&apos; &apos;Iris-versicolor&apos;
+ &apos;Iris-setosa&apos;]
+</code></pre><h3 id="23-&#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;">2.3 &#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5C06;&#x6587;&#x672C;&#x578B;&#x7C7B;&#x522B;&#x8F6C;&#x4E3A;&#x4E3A;&#x6570;&#x5B57;&#x578B;&#x7C7B;&#x522B;</span>
+encoder = LabelEncoder()
+encoder_Y = encoder.fit_transform(Y)
+print(<span class="hljs-string">&quot;\n=====&#x6807;&#x7B7E;&#x6570;&#x503C;&#x5316;&#x7684;&#x7ED3;&#x679C;=====&quot;</span>)
+print_ndarray_random_rows(encoder_Y)
+
+<span class="hljs-comment"># &#x8F6C;&#x5316;&#x4E3A; one-hot &#x7F16;&#x7801;</span>
+dummy_y = np_utils.to_categorical(encoder_Y)
+print(<span class="hljs-string">&quot;\n=====&#x6807;&#x7B7E;&#x7684;one-hot&#x7F16;&#x7801;=====&quot;</span>)
+print_ndarray_random_rows(dummy_y)
+</code></pre>
+<pre><code>=====&#x6807;&#x7B7E;&#x6570;&#x503C;&#x5316;&#x7684;&#x7ED3;&#x679C;=====
+[0 2 1 1 1]
+
+=====&#x6807;&#x7B7E;&#x7684;one-hot&#x7F16;&#x7801;=====
+[[0. 0. 1.]
+ [0. 1. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+</code></pre><h2 id="24-&#x5206;&#x5272;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;">2.4 &#x5206;&#x5272;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x62C6;&#x5206;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</span>
+X_train,X_test,y_train,y_test = train_test_split(X,dummy_y,test_size=test_size)
+print(<span class="hljs-string">&quot;&#x8BAD;&#x7EC3;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(X_train.shape))
+print(<span class="hljs-string">&quot;&#x8BAD;&#x7EC3;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(y_train.shape))
+print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(X_test.shape))
+print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(y_test.shape))
+</code></pre>
+<pre><code>&#x8BAD;&#x7EC3;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;(112, 4)
+&#x8BAD;&#x7EC3;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;(112, 3)
+&#x6D4B;&#x8BD5;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;(38, 4)
+&#x6D4B;&#x8BD5;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;(38, 3)
+</code></pre><h2 id="3&#x642D;&#x5EFA;&#x6A21;&#x578B;">3.&#x642D;&#x5EFA;&#x6A21;&#x578B;</h2>
+<h3 id="31-&#x642D;&#x5EFA;&#x6A21;&#x578B;">3.1 &#x642D;&#x5EFA;&#x6A21;&#x578B;</h3>
+<pre><code class="lang-python">model = tf.keras.Sequential()
+model.add(tf.keras.layers.Dense(units=dense1_neurons,input_dim=<span class="hljs-number">4</span>,activation=<span class="hljs-string">&apos;relu&apos;</span>))
+model.add(tf.keras.layers.Dense(units=dense2_neurons,activation=<span class="hljs-string">&apos;relu&apos;</span>))
+model.add(tf.keras.layers.Dense(units=dense3_neurons,activation=<span class="hljs-string">&apos;relu&apos;</span>))
+<span class="hljs-comment">#model.add(tf.keras.layers.Dropout(dropout_rate))</span>
+model.add(tf.keras.layers.Dense(units=<span class="hljs-number">3</span>,activation=<span class="hljs-string">&quot;softmax&quot;</span>))
+model.summary()  <span class="hljs-comment"># &#x67E5;&#x770B;&#x6A21;&#x578B;&#x7ED3;&#x6784;</span>
+</code></pre>
+<pre><code>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 512)               2560      
+_________________________________________________________________
+dense_1 (Dense)              (None, 256)               131328    
+_________________________________________________________________
+dense_2 (Dense)              (None, 128)               32896     
+_________________________________________________________________
+dense_3 (Dense)              (None, 3)                 387       
+=================================================================
+Total params: 167,171
+Trainable params: 167,171
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre><h3 id="32-&#x7F16;&#x8BD1;&#x6A21;&#x578B;">3.2 &#x7F16;&#x8BD1;&#x6A21;&#x578B;</h3>
+<pre><code class="lang-python">model.compile(loss=<span class="hljs-string">&apos;categorical_crossentropy&apos;</span>, optimizer=<span class="hljs-string">&apos;adam&apos;</span>,metrics=[<span class="hljs-string">&apos;accuracy&apos;</span>])
+</code></pre>
+<h3 id="33-&#x8BAD;&#x7EC3;&#x6A21;&#x578B;">3.3 &#x8BAD;&#x7EC3;&#x6A21;&#x578B;</h3>
+<pre><code class="lang-python">history = model.fit(X,dummy_y,validation_split=validation_split,epochs=epochs)
+</code></pre>
+<pre><code>Train on 142 samples, validate on 8 samples
+Epoch 1/500
+142/142 [==============================] - 1s 5ms/step - loss: 0.9674 - acc: 0.4437 - val_loss: 0.6660 - val_acc: 1.0000
+Epoch 2/500
+142/142 [==============================] - 0s 399us/step - loss: 0.6491 - acc: 0.6549 - val_loss: 0.5337 - val_acc: 1.0000
+Epoch 3/500
+142/142 [==============================] - 0s 188us/step - loss: 0.4673 - acc: 0.9648 - val_loss: 0.6438 - val_acc: 0.8750
+Epoch 4/500
+142/142 [==============================] - 0s 257us/step - loss: 0.3740 - acc: 0.8803 - val_loss: 0.2368 - val_acc: 1.0000
+Epoch 5/500
+142/142 [==============================] - 0s 198us/step - loss: 0.2972 - acc: 0.9366 - val_loss: 0.6141 - val_acc: 0.6250
+Epoch 6/500
+142/142 [==============================] - 0s 301us/step - loss: 0.2772 - acc: 0.9014 - val_loss: 0.3453 - val_acc: 1.0000
+Epoch 7/500
+142/142 [==============================] - 0s 329us/step - loss: 0.2424 - acc: 0.8944 - val_loss: 0.1428 - val_acc: 1.0000
+Epoch 8/500
+142/142 [==============================] - 0s 249us/step - loss: 0.1742 - acc: 0.9718 - val_loss: 0.4309 - val_acc: 0.8750
+Epoch 9/500
+142/142 [==============================] - 0s 350us/step - loss: 0.1854 - acc: 0.9296 - val_loss: 0.0789 - val_acc: 1.0000
+Epoch 10/500
+142/142 [==============================] - 0s 315us/step - loss: 0.1274 - acc: 0.9789 - val_loss: 0.2977 - val_acc: 1.0000
+......
+Epoch 490/500
+142/142 [==============================] - 0s 210us/step - loss: 0.0491 - acc: 0.9859 - val_loss: 0.0130 - val_acc: 1.0000
+Epoch 491/500
+142/142 [==============================] - 0s 223us/step - loss: 0.0383 - acc: 0.9930 - val_loss: 0.0123 - val_acc: 1.0000
+Epoch 492/500
+142/142 [==============================] - 0s 227us/step - loss: 0.0378 - acc: 0.9930 - val_loss: 0.0158 - val_acc: 1.0000
+Epoch 493/500
+142/142 [==============================] - 0s 224us/step - loss: 0.0382 - acc: 0.9859 - val_loss: 0.0175 - val_acc: 1.0000
+Epoch 494/500
+142/142 [==============================] - 0s 247us/step - loss: 0.0433 - acc: 0.9859 - val_loss: 0.0187 - val_acc: 1.0000
+Epoch 495/500
+142/142 [==============================] - 0s 238us/step - loss: 0.0378 - acc: 0.9930 - val_loss: 0.0134 - val_acc: 1.0000
+Epoch 496/500
+142/142 [==============================] - 0s 218us/step - loss: 0.0418 - acc: 0.9789 - val_loss: 0.0260 - val_acc: 1.0000
+Epoch 497/500
+142/142 [==============================] - 0s 204us/step - loss: 0.0403 - acc: 0.9859 - val_loss: 0.0145 - val_acc: 1.0000
+Epoch 498/500
+142/142 [==============================] - 0s 283us/step - loss: 0.0458 - acc: 0.9789 - val_loss: 0.0120 - val_acc: 1.0000
+Epoch 499/500
+142/142 [==============================] - 0s 229us/step - loss: 0.0327 - acc: 0.9930 - val_loss: 0.0173 - val_acc: 1.0000
+Epoch 500/500
+142/142 [==============================] - 0s 189us/step - loss: 0.0415 - acc: 0.9789 - val_loss: 0.0089 - val_acc: 1.0000
+</code></pre><h2 id="4&#x8BC4;&#x4F30;&#x6A21;&#x578B;">4.&#x8BC4;&#x4F30;&#x6A21;&#x578B;</h2>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plot_model_history</span><span class="hljs-params">(model_history)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x529F;&#x80FD;&#xFF1A;&#x6839;&#x636E;history&#x5BF9;&#x8C61;&#xFF0C;&#x7ED8;&#x5236;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x9A8C;&#x8BC1;&#x96C6;&#x4E0A;loss&#x548C;acc&#x7684;&#x53D8;&#x5316;&#x56FE;
+    &#x53C2;&#x6570;&#xFF1A;history&#x5BF9;&#x8C61;
+    &#x6765;&#x6E90;&#xFF1A;https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn 
+    &apos;&apos;&apos;</span>
+    fig, axs = plt.subplots(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,figsize=(<span class="hljs-number">15</span>,<span class="hljs-number">5</span>))
+    <span class="hljs-comment"># summarize history for accuracy</span>
+    axs[<span class="hljs-number">0</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;acc&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;acc&apos;</span>])
+    axs[<span class="hljs-number">0</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;val_acc&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;val_acc&apos;</span>])
+    axs[<span class="hljs-number">0</span>].set_title(<span class="hljs-string">&apos;Model Accuracy&apos;</span>)
+    axs[<span class="hljs-number">0</span>].set_ylabel(<span class="hljs-string">&apos;Accuracy&apos;</span>)
+    axs[<span class="hljs-number">0</span>].set_xlabel(<span class="hljs-string">&apos;Epoch&apos;</span>)
+    axs[<span class="hljs-number">0</span>].set_xticks(np.arange(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;acc&apos;</span>])+<span class="hljs-number">1</span>),len(model_history.history[<span class="hljs-string">&apos;acc&apos;</span>])/<span class="hljs-number">10</span>)
+    axs[<span class="hljs-number">0</span>].legend([<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>], loc=<span class="hljs-string">&apos;best&apos;</span>)
+    <span class="hljs-comment"># summarize history for loss</span>
+    axs[<span class="hljs-number">1</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])
+    axs[<span class="hljs-number">1</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;val_loss&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;val_loss&apos;</span>])
+    axs[<span class="hljs-number">1</span>].set_title(<span class="hljs-string">&apos;Model Loss&apos;</span>)
+    axs[<span class="hljs-number">1</span>].set_ylabel(<span class="hljs-string">&apos;Loss&apos;</span>)
+    axs[<span class="hljs-number">1</span>].set_xlabel(<span class="hljs-string">&apos;Epoch&apos;</span>)
+    axs[<span class="hljs-number">1</span>].set_xticks(np.arange(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])+<span class="hljs-number">1</span>),len(model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])/<span class="hljs-number">10</span>)
+    axs[<span class="hljs-number">1</span>].legend([<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>], loc=<span class="hljs-string">&apos;best&apos;</span>)
+    plt.show()
+</code></pre>
+<pre><code class="lang-python">plot_model_history(history)
+</code></pre>
+<p><img src="output_24_0.png" alt="png"></p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4F7F;&#x7528;&#x6D4B;&#x8BD5;&#x96C6;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;</span>
+model.evaluate(X_test,y_test)
+</code></pre>
+<pre><code>38/38 [==============================] - 0s 271us/step
+
+
+
+
+
+[0.007592696402417986, 1.0]
+</code></pre><h2 id="5&#x4F7F;&#x7528;&#x6A21;&#x578B;">5.&#x4F7F;&#x7528;&#x6A21;&#x578B;</h2>
+<pre><code class="lang-python">target = model.predict(np.array([[<span class="hljs-number">7</span>,<span class="hljs-number">5.5</span>,<span class="hljs-number">6.5</span>,<span class="hljs-number">3.9</span>]])).argmax()
+<span class="hljs-keyword">if</span> target == <span class="hljs-number">0</span>:
+    print(<span class="hljs-string">&quot;Iris-setosa&quot;</span>)
+<span class="hljs-keyword">elif</span> target == <span class="hljs-number">1</span>:
+    print(<span class="hljs-string">&quot;Iris-versicolor&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">&quot;Iris-virginica&quot;</span>)
+</code></pre>
+<pre><code>Iris-virginica
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../7_predicting.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 7.使用模型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"附录","level":"1.8","depth":1,"previous":{"title":"7.使用模型","level":"1.7","depth":1,"path":"7_predicting.md","ref":"7_predicting.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"code/code01_iris_classfication.md","mtime":"2019-07-14T15:10:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T12:48:09.837Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,357 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.评估模型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6_adjustment.html" />
+    
+    
+    <link rel="prev" href="4_training.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2_import_dataset.html">
+            
+                <a href="2_import_dataset.html">
+            
+                    
+                    2.导入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="3_preparing_dataset.html">
+            
+                <a href="3_preparing_dataset.html">
+            
+                    
+                    3.数据预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="4_training.html">
+            
+                <a href="4_training.html">
+            
+                    
+                    4.训练模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="5_evaluating.html">
+            
+                <a href="5_evaluating.html">
+            
+                    
+                    5.评估模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="6_adjustment.html">
+            
+                <a href="6_adjustment.html">
+            
+                    
+                    6.调整模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="7_predicting.html">
+            
+                <a href="7_predicting.html">
+            
+                    
+                    7.使用模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="code/code01_iris_classfication.html">
+            
+                <a href="code/code01_iris_classfication.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >5.评估模型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="5&#x8BC4;&#x4F30;&#x6A21;&#x578B;">5.&#x8BC4;&#x4F30;&#x6A21;&#x578B;</h1>
+<p>&#x4F7F;&#x7528;keras&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<a href="https://keras.io/zh/callbacks/#history" target="_blank">history&#x5BF9;&#x8C61;</a>&#xFF0C;&#x5728;history&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x4F1A;&#x8BB0;&#x5F55;&#x6A21;&#x578B;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x9009;&#x4E2D; <code>4.&#x8BC4;&#x4F30;&#x6A21;&#x578B;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED8;&#x5236;&#x56FE;&#x50CF;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-pyhton">def plot_model_history(model_history):
+    &apos;&apos;&apos;
+    &#x529F;&#x80FD;&#xFF1A;&#x6839;&#x636E;history&#x5BF9;&#x8C61;&#xFF0C;&#x7ED8;&#x5236;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x9A8C;&#x8BC1;&#x96C6;&#x4E0A;loss&#x548C;acc&#x7684;&#x53D8;&#x5316;&#x56FE;
+    &#x53C2;&#x6570;&#xFF1A;history&#x5BF9;&#x8C61;
+    &#x6765;&#x6E90;&#xFF1A;https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn 
+    &apos;&apos;&apos;
+    fig, axs = plt.subplots(1,2,figsize=(15,5))
+    # summarize history for accuracy
+    axs[0].plot(range(1,len(model_history.history[&apos;acc&apos;])+1),model_history.history[&apos;acc&apos;])
+    axs[0].plot(range(1,len(model_history.history[&apos;val_acc&apos;])+1),model_history.history[&apos;val_acc&apos;])
+    axs[0].set_title(&apos;Model Accuracy&apos;)
+    axs[0].set_ylabel(&apos;Accuracy&apos;)
+    axs[0].set_xlabel(&apos;Epoch&apos;)
+    axs[0].set_xticks(np.arange(1,len(model_history.history[&apos;acc&apos;])+1),len(model_history.history[&apos;acc&apos;])/10)
+    axs[0].legend([&apos;train&apos;, &apos;val&apos;], loc=&apos;best&apos;)
+    # summarize history for loss
+    axs[1].plot(range(1,len(model_history.history[&apos;loss&apos;])+1),model_history.history[&apos;loss&apos;])
+    axs[1].plot(range(1,len(model_history.history[&apos;val_loss&apos;])+1),model_history.history[&apos;val_loss&apos;])
+    axs[1].set_title(&apos;Model Loss&apos;)
+    axs[1].set_ylabel(&apos;Loss&apos;)
+    axs[1].set_xlabel(&apos;Epoch&apos;)
+    axs[1].set_xticks(np.arange(1,len(model_history.history[&apos;loss&apos;])+1),len(model_history.history[&apos;loss&apos;])/10)
+    axs[1].legend([&apos;train&apos;, &apos;val&apos;], loc=&apos;best&apos;)
+    plt.show()
+</code></pre>
+<p>&#x8FD0;&#x884C;&#xFF0C;&#x672C;&#x5355;&#x5143;&#x683C;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x7EE7;&#x7EED;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code class="lang-python">plot_model_history(history)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#xFF0C;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g4zn5gyslbj30or099t9j.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p>&#x4F1A;&#x770B;&#x5230;&#x8BAD;&#x7EC3;&#x96C6;&#x7684;&#x7ED3;&#x679C;&#x8FD8;&#x4E0D;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x6D4B;&#x8BD5;&#x96C6;&#x7684;&#x6548;&#x679C;&#x5F88;&#x5DEE;&#xFF0C;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x6B63;&#x786E;&#x7387;&#x3002;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x6211;&#x4EEC; <strong>&#x8C03;&#x6574;&#x6A21;&#x578B;&#x7ED3;&#x6784;</strong> &#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
+<p>1.&#x8BAD;&#x7EC3;&#x9996;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF1A;&#x57FA;&#x672C;&#x5206;&#x7C7B; <a href="https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn" target="_blank">https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4_training.html" class="navigation navigation-prev " aria-label="Previous page: 4.训练模型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6_adjustment.html" class="navigation navigation-next " aria-label="Next page: 6.调整模型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.评估模型","level":"1.5","depth":1,"next":{"title":"6.调整模型","level":"1.6","depth":1,"path":"6_adjustment.md","ref":"6_adjustment.md","articles":[]},"previous":{"title":"4.训练模型","level":"1.4","depth":1,"path":"4_training.md","ref":"4_training.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5_evaluating.md","mtime":"2019-07-14T14:29:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T12:48:09.837Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
