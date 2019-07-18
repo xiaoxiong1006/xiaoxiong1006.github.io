@@ -1,0 +1,442 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9.导入模型和使用模型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="10_adjustment.html" />
+    
+    
+    <link rel="prev" href="7_saving.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1_init.html">
+            
+                <a href="1_init.html">
+            
+                    
+                    2.准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2_import_dataset.html">
+            
+                <a href="2_import_dataset.html">
+            
+                    
+                    3.导入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3_explore_dataset.html">
+            
+                <a href="3_explore_dataset.html">
+            
+                    
+                    4.数据的探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4_preparing_dataset.html">
+            
+                <a href="4_preparing_dataset.html">
+            
+                    
+                    5.数据预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5_training.html">
+            
+                <a href="5_training.html">
+            
+                    
+                    6.训练模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6_evaluating.html">
+            
+                <a href="6_evaluating.html">
+            
+                    
+                    7.评估模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7_saving.html">
+            
+                <a href="7_saving.html">
+            
+                    
+                    8.保存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="8_loding_predicting.html">
+            
+                <a href="8_loding_predicting.html">
+            
+                    
+                    9.导入模型和使用模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="10_adjustment.html">
+            
+                <a href="10_adjustment.html">
+            
+                    
+                    10.改进模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="11_appendix_summary.html">
+            
+                <a href="11_appendix_summary.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="code/code01_mnist_linear_softmax.html">
+            
+                <a href="code/code01_mnist_linear_softmax.html">
+            
+                    
+                    softmax回归代码清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="code/code02_mnist_cnn.html">
+            
+                <a href="code/code02_mnist_cnn.html">
+            
+                    
+                    卷积神经网络代码清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >9.导入模型和使用模型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="9-&#x4F7F;&#x7528;&#x6A21;&#x578B;">9. &#x4F7F;&#x7528;&#x6A21;&#x578B;</h1>
+<h2 id="91-&#x6A21;&#x578B;&#x7684;&#x5BFC;&#x5165;">9.1 &#x6A21;&#x578B;&#x7684;&#x5BFC;&#x5165;</h2>
+<p>&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5BFC;&#x5305;&#xFF1A;</p>
+<ul>
+<li><a href="https://keras.io/zh/getting-started/faq/#how-can-i-save-a-keras-model" target="_blank">load_model</a></li>
+</ul>
+<p>&#x5728;&#x7A0B;&#x5E8F;&#x5F00;&#x5934;&#x7684;&#x5BFC;&#x5305;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x589E;&#x52A0;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> load_model
+</code></pre>
+<p>&#x5B8C;&#x6574;&#x7684;&#x5BFC;&#x5305;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BFC;&#x5305;</span>
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">from</span> tensorflow.examples.tutorials.mnist <span class="hljs-keyword">import</span> input_data
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">from</span> keras.models <span class="hljs-keyword">import</span> load_model
+</code></pre>
+<p>&#x91CD;&#x65B0;&#x8FD0;&#x884C;&#x5BFC;&#x5305;&#x5355;&#x5143;&#x683C;&#x3002;</p>
+<p>&#x9009;&#x4E2D; <code>8.1 &#x5BFC;&#x5165;&#x4FDD;&#x5B58;&#x597D;&#x7684;&#x6A21;&#x578B;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python">model_saved = load_model(<span class="hljs-string">&quot;model/model_mnist_linear.h5&quot;</span>)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#xFF0C;&#x672C;&#x5355;&#x5143;&#x683C;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#xFF0C;&#x4E0D;&#x62A5;&#x9519;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="92-&#x6A21;&#x578B;&#x7684;&#x4F7F;&#x7528;">9.2 &#x6A21;&#x578B;&#x7684;&#x4F7F;&#x7528;</h2>
+<p>&#x627E;&#x6D4B;&#x8BD5;&#x96C6;&#x4E2D;&#x4EFB;&#x53D6;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x5E76;&#x53EF;&#x89C6;&#x5316;&#x3002;</p>
+<p>&#x9009;&#x4E2D; <code>8.2 &#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x4E0A;&#x6D4B;&#x8BD5;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x4E0A;&#x4EFB;&#x53D6;&#x4E00;&#x5F20;&#x56FE;&#x7247;</span>
+idx = np.random.randint(<span class="hljs-number">10000</span>) <span class="hljs-comment">#&#x4EA7;&#x751F;&#x4E00;&#x4E2A;1&#xFF5E;10000&#x7684;&#x968F;&#x673A;&#x6570;&#x4F5C;&#x4E3A;&#x4E0B;&#x6807;</span>
+img = mnist.test.images[idx]
+img = img.reshape(<span class="hljs-number">28</span>,<span class="hljs-number">28</span>)
+plt.imshow(img,cmap=plt.get_cmap(<span class="hljs-string">&apos;gray_r&apos;</span>))
+</code></pre>
+<p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;
+<img src="https://ww4.sinaimg.cn/large/006tNc79ly1g539odr3znj307307074i.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<blockquote>
+<p>&#x6839;&#x636E;&#x4EA7;&#x751F;&#x7684;&#x968F;&#x673A;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x56FE;&#x7247;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p>
+</blockquote>
+<p>&#x7EE7;&#x7EED;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code class="lang-python">
+<span class="hljs-comment"># &#x8FDB;&#x884C;&#x9884;&#x6D4B;</span>
+img = img.reshape(<span class="hljs-number">1</span>,<span class="hljs-number">784</span>)
+print(<span class="hljs-string">&quot;=====&#x9884;&#x6D4B;&#x503C;=====&quot;</span>)
+print(model.predict(img).argmax())
+label = mnist.test.labels[idx]
+print(<span class="hljs-string">&quot;=====&#x771F;&#x5B9E;&#x503C;=====&quot;</span>)
+print(label.argmax())
+</code></pre>
+<p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;
+<img src="https://ww4.sinaimg.cn/large/006tNc79ly1g539uxv7w6j309u028mx6.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p>&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x73AF;&#x8282;&#x7684;&#x4EE3;&#x7801;&#x6E05;&#x5355;&#x89C1;&#xFF1A;<a href="code/code01_mnist_linear_softmax.html">&#x9644;&#x5F55;softmax&#x56DE;&#x5F52;&#x4EE3;&#x7801;&#x6E05;&#x5355;</a></p>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
+<p>1.&#x5982;&#x4F55;&#x4FDD;&#x5B58; Keras &#x6A21;&#x578B;&#xFF1F;<a href="https://keras.io/zh/getting-started/faq/#how-can-i-save-a-keras-model" target="_blank">https://keras.io/zh/getting-started/faq/#how-can-i-save-a-keras-model</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7_saving.html" class="navigation navigation-prev " aria-label="Previous page: 8.保存模型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="10_adjustment.html" class="navigation navigation-next " aria-label="Next page: 10.改进模型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9.导入模型和使用模型","level":"1.9","depth":1,"next":{"title":"10.改进模型","level":"1.10","depth":1,"path":"10_adjustment.md","ref":"10_adjustment.md","articles":[]},"previous":{"title":"8.保存模型","level":"1.8","depth":1,"path":"7_saving.md","ref":"7_saving.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"8_loding_predicting.md","mtime":"2019-07-17T17:34:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-18T00:14:40.121Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
