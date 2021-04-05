@@ -1,8 +1,0 @@
-# This is a comment
-
-# Ignore the file test.md
-.DS_Store
-*/.DS_Store
-.gitignore
-
-# Ignore everything in the directory "bin"
