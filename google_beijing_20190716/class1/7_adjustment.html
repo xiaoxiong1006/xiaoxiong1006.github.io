@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="code/code03_iris_logistics.html" />
+    <link rel="next" href="code03_iris_logistics.md" />
     
     
     <link rel="prev" href="code/code02_iris_linear.html" />
@@ -264,9 +264,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="code/code03_iris_logistics.html">
+        <li class="chapter " data-level="1.9" data-path="code03_iris_logistics.md">
             
-                <a href="code/code03_iris_logistics.html">
+                <span>
             
                     
                     9.鸢尾花二分类代码清单v1.0
@@ -325,11 +325,11 @@
                                 <h1 id="7-&#x8C03;&#x6574;&#x6A21;&#x578B;">7. &#x8C03;&#x6574;&#x6A21;&#x578B;</h1>
 <h2 id="71-&#x5BF9;&#x6A21;&#x578B;&#x7684;&#x8C03;&#x6574;">7.1 &#x5BF9;&#x6A21;&#x578B;&#x7684;&#x8C03;&#x6574;</h2>
 <p>&#x76EE;&#x524D;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x7684;&#x7ED3;&#x679C;&#x5168;&#x90E8;&#x7ECF;&#x8FC7;&#x7EBF;&#x6027;&#x6A21;&#x578B;&#x8BA1;&#x7B97;&#x7684;&#x4E3A;&#x6570;&#x503C;&#x578B;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x771F;&#x5B9E;&#x7684;&#x7ED3;&#x679C;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x503C; <code>0</code> &#x548C; <code>1</code>&#x3002;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x540E;&#xFF0C;&#x5BF9;&#x7ED3;&#x679C;&#x505A;&#x4E00;&#x6B21;&#x6FC0;&#x6D3B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x66F4;&#x63A5;&#x8FD1;&#x771F;&#x5B9E;&#x503C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
-<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4xwxowr7gj30ma04ojs5.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p><img src="asset/006tNc79gy1g4xwxowr7gj30ma04ojs5.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
 <p>&#x5C31;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x6765;&#x8BF4;&#xFF0C;&#x5373;&#x6240;&#x6709;&#x4F4E;&#x4E8E; <code>0.5</code> &#x7684;&#x5168;&#x90E8;&#x5411; <code>0</code> &#x9760;&#x8FD1;&#xFF0C;&#x8D85;&#x8FC7; <code>0.5</code> &#x7684; &#x5168;&#x90E8;&#x5411; <code>1</code>&#x9760;&#x8FD1;</p>
-<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4xx1u0ghnj30af070wet.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p><img src="asset/006tNc79gy1g4xx1u0ghnj30af070wet.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
 <p>&#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x8003;&#x8651;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x7528; <a href="https://baike.baidu.com/item/Sigmoid%E5%87%BD%E6%95%B0/7981407" target="_blank">sigmoid</a> &#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#xFF0C;sigmoid&#x51FD;&#x6570;&#x56FE;&#x50CF;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/320px-Logistic-curve.svg.png" alt="sigmoid&#x51FD;&#x6570;&#x56FE;&#x50CF;"></p>
+<p><img src="asset/320px-Logistic-curve.svg.png" alt="sigmoid&#x51FD;&#x6570;&#x56FE;&#x50CF;"></p>
 <p>&#x5BF9;&#x6A21;&#x578B;&#x6DFB;&#x52A0; <code>&#x6FC0;&#x6D3B;&#x51FD;&#x6570;</code>&#xFF0C;&#x4FEE;&#x6539;&#x6A21;&#x578B;&#x642D;&#x5EFA;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x642D;&#x5EFA;&#x6A21;&#x578B;</span>
 model = tf.keras.Sequential()
@@ -346,7 +346,7 @@ model.summary()  <span class="hljs-comment"># &#x67E5;&#x770B;&#x6A21;&#x578B;&#
 <h2 id="72-&#x5BF9;&#x7F16;&#x8BD1;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x7684;&#x8C03;&#x6574;">7.2 &#x5BF9;&#x7F16;&#x8BD1;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x7684;&#x8C03;&#x6574;</h2>
 <p>&#x6DFB;&#x52A0;&#x4E86;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x8C03;&#x6574;&#x635F;&#x5931;&#x51FD;&#x6570;&#x4E3A;<a href="https://blog.csdn.net/qq_14845119/article/details/80787753" target="_blank">binary_crossentropy</a>&#x3002;</p>
 <p><code>binary_crossentropy</code> &#x662F;&#x4E8C;&#x5206;&#x7C7B;&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;&#x4EA4;&#x53C9;&#x71B5;&#x7528;&#x6765;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x6982;&#x7387;&#x5206;&#x5E03;&#x4E4B;&#x95F4;&#x7684;&#x5E73;&#x5747;&#x5DEE;&#x8DDD;&#x3002;&#x539F;&#x7406;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;
-<img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4zgke46mdj30h606e0ti.jpg" alt="&#x4EA4;&#x53C9;&#x71B5;&#x539F;&#x7406;&#x56FE;"></p>
+<img src="asset/006tNc79ly1g4zgke46mdj30h606e0ti.jpg" alt="&#x4EA4;&#x53C9;&#x71B5;&#x539F;&#x7406;&#x56FE;"></p>
 <p>&#x5C06;&#x6A21;&#x578B;&#x7F16;&#x8BD1;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x7F16;&#x8BD1;&#x6A21;&#x578B;</span>
 model.compile(optimizer=<span class="hljs-string">&apos;sgd&apos;</span>, loss=<span class="hljs-string">&apos;mse&apos;</span>)
@@ -361,7 +361,7 @@ model.compile(optimizer=<span class="hljs-string">&apos;binary_crossentropy&apos
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x3002;</p>
 <p>&#x518D;&#x6B21;&#x8FD0;&#x884C;<code>&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x4EE3;&#x7801;</code> &#x5E76;&#x67E5;&#x770B;loss&#xFF08;&#x635F;&#x5931;&#xFF09;&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5316;&#x3002;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g4zgvapecnj30af0700sx.jpg" alt="loss&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5316;"></p>
+<p><img src="asset/006tNc79ly1g4zgvapecnj30af0700sx.jpg" alt="loss&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5316;"></p>
 <p>&#x4F1A;&#x53D1;&#x73B0;loss&#x51FD;&#x6570;&#x5F00;&#x59CB;&#x6536;&#x655B;&#xFF0C;&#x4F46;&#x4ECD;&#x5904;&#x4E8E;&#x4E0B;&#x964D;&#x7A7A;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x8BAD;&#x7EC3;&#x6279;&#x6B21;&#x3002;</p>
 <h2 id="73-&#x5BF9;&#x8D85;&#x53C2;&#x6570;&#x7684;&#x8C03;&#x6574;">7.3 &#x5BF9;&#x8D85;&#x53C2;&#x6570;&#x7684;&#x8C03;&#x6574;</h2>
 <p>&#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;<code>&#x8D85;&#x53C2;&#x6570;</code> &#x662F;&#x6307;&#x5728;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x503C;&#x7684;&#x53C2;&#x6570;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8D85;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;&#x5728;&#x672C;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x8D85;&#x53C2;&#x6570;&#x662F; <code>&#x8BAD;&#x7EC3;&#x6279;&#x6B21;epochs</code></p>
@@ -371,7 +371,7 @@ model.compile(optimizer=<span class="hljs-string">&apos;binary_crossentropy&apos
 epochs=<span class="hljs-number">1000</span>
 </code></pre>
 <p>&#x4EE3;&#x7801;&#x4F4D;&#x7F6E;&#x4E3A;&#xFF1A;
-<img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4xzp6a3j3j30hg07odgu.jpg" alt="&#x4EE3;&#x7801;&#x4F4D;&#x7F6E;"></p>
+<img src="asset/006tNc79gy1g4xzp6a3j3j30hg07odgu.jpg" alt="&#x4EE3;&#x7801;&#x4F4D;&#x7F6E;"></p>
 <blockquote>
 <p>epochs&#x901A;&#x5E38;&#x4EE5;10&#x7684;&#x5E42;&#x6B21;&#x8FDB;&#x884C;&#x589E;&#x51CF;&#x3002;</p>
 </blockquote>
@@ -385,7 +385,7 @@ history = model.fit(X_train, y_train,epochs=epochs)
 </code></pre>
 <p>&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x7684;&#x8BED;&#x53E5;&#x3002;</p>
 <p>&#x67E5;&#x770B;loss&#xFF08;&#x635F;&#x5931;&#xFF09;&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5316;&#x3002;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tNc79ly1g4zgy7dcr5j30af070wep.jpg" alt="loss&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5316;"></p>
+<p><img src="asset/006tNc79ly1g4zgy7dcr5j30af070wep.jpg" alt="loss&#x51FD;&#x6570;&#x7684;&#x53D8;&#x5316;"></p>
 <p>&#x4F1A;&#x53D1;&#x73B0;loss&#x51FD;&#x6570;&#x867D;&#x7136;&#x4ECD;&#x5904;&#x4E8E;&#x4E0B;&#x964D;&#x7A7A;&#x95F4;&#xFF0C;&#x4F46;&#x53E6;&#x4E00;&#x4E2A;&#x53C2;&#x6570; <code>acc</code> &#x5DF2;&#x7ECF;&#x4E3A; <code>1.00</code> &#xFF0C;&#x4EE3;&#x8868;&#x5728;&#x8BAD;&#x7EC3;&#x96C6;&#x4E0A;&#x7684;&#x6B63;&#x786E;&#x7387;&#x8FBE;&#x5230;&#x4E86; <code>100%</code> &#xFF0C;&#x7EE7;&#x7EED;&#x8BAD;&#x7EC3;&#x7684;&#x610F;&#x4E49;&#x4E0D;&#x5927;&#x3002;</p>
 <h2 id="74-&#x6D4B;&#x8BD5;">7.4 &#x6D4B;&#x8BD5;</h2>
 <p>&#x8FD0;&#x884C;&#x5728;&#x6D4B;&#x8BD5;&#x96C6;&#x4E0A;&#x7684;&#x8BC4;&#x4F30;&#x4EE3;&#x7801;&#xFF0C;</p>
@@ -393,12 +393,12 @@ history = model.fit(X_train, y_train,epochs=epochs)
 model.evaluate(X_test,y_test)
 </code></pre>
 <p>&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g4y087yfghj30de01mjrg.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p><img src="asset/006tNc79gy1g4y087yfghj30de01mjrg.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
 <p>1.0 &#x5373; 100% &#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 <p>&#x7EE7;&#x7EED;&#x8FD0;&#x884C; <code>4.&#x4F7F;&#x7528;&#x6A21;&#x578B;</code> &#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x503C;&#x5168;&#x90E8;&#x843D;&#x5230;&#x4E86; <code>0&#xFF5E;1</code> &#x4E4B;&#x95F4;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6982;&#x7387;&#x503C;&#xFF0C;&#x8D8A;&#x9760;&#x8FD1; <code>0</code> &#x4EE3;&#x8868;&#x662F;&#x7B2C;&#x4E00;&#x79CD;&#x9E22;&#x5C3E;&#x82B1;&#xFF08;Iris-setosa&#xFF09;&#x53EF;&#x80FD;&#x6027;&#x8D8A;&#x5927;&#xFF0C;&#x8D8A;&#x9760;&#x8FD1; <code>1</code> &#x4EE3;&#x8868;&#x662F;&#x7B2C;&#x4E8C;&#x79CD; &#x9E22;&#x5C3E;&#x82B1;&#xFF08;Iris-versicolor&#xFF09;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x8D8A;&#x5927;&#x3002;</p>
-<p><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4y0fq9tp3j30ln04njs4.jpg" alt="&#x9884;&#x6D4B;&#x7ED3;&#x679C;"></p>
+<p><img src="asset/006tNc79gy1g4y0fq9tp3j30ln04njs4.jpg" alt="&#x9884;&#x6D4B;&#x7ED3;&#x679C;"></p>
 <p>&#x53EF;&#x89C6;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x8D8A;&#x96C6;&#x4E2D;&#x3002;
-<img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4y0jxxvucj30af07074m.jpg" alt="&#x53EF;&#x89C6;&#x5316;"></p>
+<img src="asset/006tNc79gy1g4y0jxxvucj30af07074m.jpg" alt="&#x53EF;&#x89C6;&#x5316;"></p>
 <p>&#x5BF9;&#x771F;&#x5B9E;&#x6837;&#x672C;&#x7684;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x4E5F;&#x8D8A;&#x51C6;&#x786E;&#xFF0C;&#x53EF;&#x8FBE; 0.9999</p>
 <blockquote>
 <p>&#x6BCF;&#x4E2A;&#x4EBA;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4F1A;&#x7565;&#x6709;&#x4E0D;&#x540C;&#xFF0C;&#x4F46;&#x6574;&#x4F53;&#x76F8;&#x4F3C;&#x3002;</p>
@@ -448,7 +448,7 @@ target = model.predict(np.array([[<span class="hljs-number">6.5</span>,<span cla
                 </a>
                 
                 
-                <a href="code/code03_iris_logistics.html" class="navigation navigation-next " aria-label="Next page: 9.鸢尾花二分类代码清单v1.0">
+                <a href="code03_iris_logistics.md" class="navigation navigation-next " aria-label="Next page: 9.鸢尾花二分类代码清单v1.0">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -459,7 +459,7 @@ target = model.predict(np.array([[<span class="hljs-number">6.5</span>,<span cla
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.调整模型","level":"1.8","depth":1,"next":{"title":"9.鸢尾花二分类代码清单v1.0","level":"1.9","depth":1,"path":"code/code03_iris_logistics.md","ref":"code/code03_iris_logistics.md","articles":[]},"previous":{"title":"7.鸢尾花二分类代码清单V0.1","level":"1.7","depth":1,"path":"code/code02_iris_linear.md","ref":"code/code02_iris_linear.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7_adjustment.md","mtime":"2019-07-16T01:37:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-16T12:46:08.726Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.调整模型","level":"1.8","depth":1,"next":{"title":"9.鸢尾花二分类代码清单v1.0","level":"1.9","depth":1,"path":"code03_iris_logistics.md","ref":"code03_iris_logistics.md","articles":[]},"previous":{"title":"7.鸢尾花二分类代码清单V0.1","level":"1.7","depth":1,"path":"code/code02_iris_linear.md","ref":"code/code02_iris_linear.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7_adjustment.md","mtime":"2021-04-24T01:14:33.172Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-24T01:15:21.899Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -467,6 +467,10 @@ target = model.predict(np.array([[<span class="hljs-number">6.5</span>,<span cla
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
