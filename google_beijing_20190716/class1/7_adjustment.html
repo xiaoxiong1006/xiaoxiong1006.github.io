@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -349,8 +353,8 @@ model.summary()  <span class="hljs-comment"># &#x67E5;&#x770B;&#x6A21;&#x578B;&#
 <p><code>binary_crossentropy</code> &#x662F;&#x4E8C;&#x5206;&#x7C7B;&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;&#x4EA4;&#x53C9;&#x71B5;&#x7528;&#x6765;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x6982;&#x7387;&#x5206;&#x5E03;&#x4E4B;&#x95F4;&#x7684;&#x5E73;&#x5747;&#x5DEE;&#x8DDD;&#x3002;</p>
 <p>&#x5747;&#x65B9;&#x5DEE;MSE&#x4E0E;&#x4E8C;&#x5206;&#x7C7B;&#x4EA4;&#x53C9;&#x71B5;binary_crossentropy&#x7684;&#x516C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p><img src="asset/749674-d03aa6fba8bc6d00.png"></p>
-<p>$$ MSE = $$</p>
-<p>$$ $$</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo></mrow><annotation encoding="application/x-tex"> MSE = </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex"> </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0em;"></span><span class="strut bottom" style="height:0em;vertical-align:0em;"></span><span class="base textstyle uncramped"></span></span></span></p>
 <p>&#x5C06;&#x6A21;&#x578B;&#x7F16;&#x8BD1;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x7F16;&#x8BD1;&#x6A21;&#x578B;</span>
 model.compile(optimizer=<span class="hljs-string">&apos;sgd&apos;</span>, loss=<span class="hljs-string">&apos;mse&apos;</span>)
@@ -463,7 +467,7 @@ target = model.predict(np.array([[<span class="hljs-number">6.5</span>,<span cla
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.调整模型","level":"1.8","depth":1,"next":{"title":"9.鸢尾花二分类代码清单v1.0","level":"1.9","depth":1,"path":"code03_iris_logistics.md","ref":"code03_iris_logistics.md","articles":[]},"previous":{"title":"7.鸢尾花二分类代码清单V0.1","level":"1.7","depth":1,"path":"code/code02_iris_linear.md","ref":"code/code02_iris_linear.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7_adjustment.md","mtime":"2021-04-24T10:35:39.706Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-24T10:45:06.913Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.调整模型","level":"1.8","depth":1,"next":{"title":"9.鸢尾花二分类代码清单v1.0","level":"1.9","depth":1,"path":"code03_iris_logistics.md","ref":"code03_iris_logistics.md","articles":[]},"previous":{"title":"7.鸢尾花二分类代码清单V0.1","level":"1.7","depth":1,"path":"code/code02_iris_linear.md","ref":"code/code02_iris_linear.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","livereload"],"pluginsConfig":{"katex":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"7_adjustment.md","mtime":"2021-04-24T10:35:39.706Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-25T01:02:01.349Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
