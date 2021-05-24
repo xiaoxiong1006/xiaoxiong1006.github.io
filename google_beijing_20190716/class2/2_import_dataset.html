@@ -241,12 +241,7 @@
                                 <h1 id="2-&#x5BFC;&#x5165;&#x6570;&#x636E;">2. &#x5BFC;&#x5165;&#x6570;&#x636E;</h1>
 <h2 id="21-&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">2.1 &#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
 <p>&#x65B0;&#x5EFA;&#x540D;&#x4E3A; <code>Codelab</code> &#x7684;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#xFF0C;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;&#x540D;&#x4E3A; <code>data</code> &#x7684;&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x6570;&#x636E;&#x96C6;&#x3002;</p>
-<p>&#x5207;&#x6362;&#x5230; <code>Terminal</code> &#x754C;&#x9762;&#xFF0C;&#x8FDB;&#x5165; <code>Codelab</code> &#x76EE;&#x5F55;&#xFF0C;&#x590D;&#x5236;&#x6570;&#x636E;&#x96C6;&#x6587;&#x4EF6;&#x5230; <code>Codelab/data/</code> &#x76EE;&#x5F55;&#x4E0B;:</p>
-<pre><code class="lang-shell">cp -r ../Tools/datasets/* data/
-</code></pre>
-<p>&#x590D;&#x5236;&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x5230;&#x672C;&#x76EE;&#x5F55;&#x4E0B;:</p>
-<pre><code class="lang-shell">cp -r ../Tools/01_iris_classification_templete.ipynb 01_iris_classification.ipynb
-</code></pre>
+<p>&#x590D;&#x5236;&#x6A21;&#x677F;&#x6587;&#x4EF6;<code>01_iris_classification_templete.ipynb</code>&#x5230;<code>Codelab</code>&#x76EE;&#x5F55;&#x4E0B;:</p>
 <p>&#x53CC;&#x51FB;&#x6253;&#x5F00;&#x6587;&#x4EF6; <code>01_iris_classification.ipynb</code>&#xFF0C;&#x9996;&#x5148;&#x8FDB;&#x884C;&#x4F9D;&#x8D56;&#x5305;&#x7684;&#x5BFC;&#x5165;&#x3002;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x4EE5;&#x4E0B;&#x4F9D;&#x8D56;&#x5305;&#xFF1A;</p>
 <ul>
 <li><a href="https://pandas.pydata.org/" target="_blank">pandas</a></li>
@@ -270,14 +265,16 @@
 <p>&#x9009;&#x4E2D; <code>2.1 &#x5BFC;&#x5165;&#x6570;&#x636E;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x5C06; <code>iris.data</code> &#x7684;&#x6570;&#x636E;&#x8BFB;&#x5165;&#x5230; <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html#data-structures" target="_blank">DataFrame</a> &#x5BF9;&#x8C61;&#x4E2D;&#x3002; &#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-python">datasets_path = <span class="hljs-string">&apos;data/iris.data&apos;</span>
 iris = pd.read_csv(datasets_path,header=<span class="hljs-keyword">None</span>)
+iris.columns =[<span class="hljs-string">&apos;sepel_length&apos;</span>,<span class="hljs-string">&apos;sepel_width&apos;</span>,<span class="hljs-string">&apos;petal_length&apos;</span>,<span class="hljs-string">&apos;petal_width&apos;</span>,<span class="hljs-string">&apos;species&apos;</span>]
 print(iris.sample(<span class="hljs-number">5</span>))
 </code></pre>
 <blockquote>
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html" target="_blank">read_csv</a> &#x7528;&#x6765;&#x8BFB;&#x53D6;&#x7ED9;&#x5B9A;&#x6587;&#x4EF6;&#x5730;&#x5740;&#x7684;csv&#x6587;&#x4EF6;&#x3002; <code>header</code> &#x53C2;&#x6570;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x884C;&#x6570;&#x4F5C;&#x4E3A;&#x5217;&#x540D;&#xFF0C;<code>None</code>&#x4EE3;&#x8868;&#x4E0D;&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x5217;&#x4F5C;&#x4E3A;&#x5217;&#x540D;&#x3002;</p>
+<p><code>columns</code> &#x5C5E;&#x6027;&#x7528;&#x6765;&#x8868;&#x793A;&#x5217;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7528;&#x6765;&#x4E3A;&#x5217;&#x547D;&#x540D;&#x3002;</p>
 <p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html?highlight=sample#pandas.DataFrame.sample" target="_blank">sample(5)</a> &#x7528;&#x6765;&#x968F;&#x673A;&#x83B7;&#x53D6;5&#x4E2A;&#x6837;&#x672C;&#x3002;</p>
 </blockquote>
 <p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4z432uprxj30b8037dg1.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p><img src="asset/c321001.png" width="720"></p>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
 <ol>
 <li>Keras Documentation <a href="https://keras.io" target="_blank">https://keras.io</a></li>
@@ -327,7 +324,7 @@ print(iris.sample(<span class="hljs-number">5</span>))
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.导入数据","level":"1.2","depth":1,"next":{"title":"3.数据预处理","level":"1.3","depth":1,"path":"3_preparing_dataset.md","ref":"3_preparing_dataset.md","articles":[]},"previous":{"title":"1.提出问题","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_import_dataset.md","mtime":"2019-07-14T05:14:06.913Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-23T08:52:10.502Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.导入数据","level":"1.2","depth":1,"next":{"title":"3.数据预处理","level":"1.3","depth":1,"path":"3_preparing_dataset.md","ref":"3_preparing_dataset.md","articles":[]},"previous":{"title":"1.提出问题","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2_import_dataset.md","mtime":"2021-05-23T10:21:43.788Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-24T02:20:56.072Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -241,29 +241,29 @@
                                 <h1 id="5&#x8BC4;&#x4F30;&#x6A21;&#x578B;">5.&#x8BC4;&#x4F30;&#x6A21;&#x578B;</h1>
 <p>&#x4F7F;&#x7528;keras&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<a href="https://keras.io/zh/callbacks/#history" target="_blank">history&#x5BF9;&#x8C61;</a>&#xFF0C;&#x5728;history&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x4F1A;&#x8BB0;&#x5F55;&#x6A21;&#x578B;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x53C2;&#x6570;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
 <p>&#x9009;&#x4E2D; <code>4.&#x8BC4;&#x4F30;&#x6A21;&#x578B;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED8;&#x5236;&#x56FE;&#x50CF;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-pyhton">def plot_model_history(model_history):
-    &apos;&apos;&apos;
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plot_model_history</span><span class="hljs-params">(model_history)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
     &#x529F;&#x80FD;&#xFF1A;&#x6839;&#x636E;history&#x5BF9;&#x8C61;&#xFF0C;&#x7ED8;&#x5236;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x9A8C;&#x8BC1;&#x96C6;&#x4E0A;loss&#x548C;acc&#x7684;&#x53D8;&#x5316;&#x56FE;
     &#x53C2;&#x6570;&#xFF1A;history&#x5BF9;&#x8C61;
     &#x6765;&#x6E90;&#xFF1A;https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn 
-    &apos;&apos;&apos;
-    fig, axs = plt.subplots(1,2,figsize=(15,5))
-    # summarize history for accuracy
-    axs[0].plot(range(1,len(model_history.history[&apos;acc&apos;])+1),model_history.history[&apos;acc&apos;])
-    axs[0].plot(range(1,len(model_history.history[&apos;val_acc&apos;])+1),model_history.history[&apos;val_acc&apos;])
-    axs[0].set_title(&apos;Model Accuracy&apos;)
-    axs[0].set_ylabel(&apos;Accuracy&apos;)
-    axs[0].set_xlabel(&apos;Epoch&apos;)
-    axs[0].set_xticks(np.arange(1,len(model_history.history[&apos;acc&apos;])+1),len(model_history.history[&apos;acc&apos;])/10)
-    axs[0].legend([&apos;train&apos;, &apos;val&apos;], loc=&apos;best&apos;)
-    # summarize history for loss
-    axs[1].plot(range(1,len(model_history.history[&apos;loss&apos;])+1),model_history.history[&apos;loss&apos;])
-    axs[1].plot(range(1,len(model_history.history[&apos;val_loss&apos;])+1),model_history.history[&apos;val_loss&apos;])
-    axs[1].set_title(&apos;Model Loss&apos;)
-    axs[1].set_ylabel(&apos;Loss&apos;)
-    axs[1].set_xlabel(&apos;Epoch&apos;)
-    axs[1].set_xticks(np.arange(1,len(model_history.history[&apos;loss&apos;])+1),len(model_history.history[&apos;loss&apos;])/10)
-    axs[1].legend([&apos;train&apos;, &apos;val&apos;], loc=&apos;best&apos;)
+    &apos;&apos;&apos;</span>
+    fig, axs = plt.subplots(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,figsize=(<span class="hljs-number">15</span>,<span class="hljs-number">5</span>))
+    <span class="hljs-comment"># summarize history for accuracy</span>
+    axs[<span class="hljs-number">0</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;accuracy&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;accuracy&apos;</span>])
+    axs[<span class="hljs-number">0</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;val_accuracy&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;val_accuracy&apos;</span>])
+    axs[<span class="hljs-number">0</span>].set_title(<span class="hljs-string">&apos;Model Accuracy&apos;</span>)
+    axs[<span class="hljs-number">0</span>].set_ylabel(<span class="hljs-string">&apos;Accuracy&apos;</span>)
+    axs[<span class="hljs-number">0</span>].set_xlabel(<span class="hljs-string">&apos;Epoch&apos;</span>)
+    axs[<span class="hljs-number">0</span>].set_xticks(np.arange(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;accuracy&apos;</span>])+<span class="hljs-number">1</span>),len(model_history.history[<span class="hljs-string">&apos;accuracy&apos;</span>])/<span class="hljs-number">10</span>)
+    axs[<span class="hljs-number">0</span>].legend([<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>], loc=<span class="hljs-string">&apos;best&apos;</span>)
+    <span class="hljs-comment"># summarize history for loss</span>
+    axs[<span class="hljs-number">1</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])
+    axs[<span class="hljs-number">1</span>].plot(range(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;val_loss&apos;</span>])+<span class="hljs-number">1</span>),model_history.history[<span class="hljs-string">&apos;val_loss&apos;</span>])
+    axs[<span class="hljs-number">1</span>].set_title(<span class="hljs-string">&apos;Model Loss&apos;</span>)
+    axs[<span class="hljs-number">1</span>].set_ylabel(<span class="hljs-string">&apos;Loss&apos;</span>)
+    axs[<span class="hljs-number">1</span>].set_xlabel(<span class="hljs-string">&apos;Epoch&apos;</span>)
+    axs[<span class="hljs-number">1</span>].set_xticks(np.arange(<span class="hljs-number">1</span>,len(model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])+<span class="hljs-number">1</span>),len(model_history.history[<span class="hljs-string">&apos;loss&apos;</span>])/<span class="hljs-number">10</span>)
+    axs[<span class="hljs-number">1</span>].legend([<span class="hljs-string">&apos;train&apos;</span>, <span class="hljs-string">&apos;val&apos;</span>], loc=<span class="hljs-string">&apos;best&apos;</span>)
     plt.show()
 </code></pre>
 <p>&#x8FD0;&#x884C;&#xFF0C;&#x672C;&#x5355;&#x5143;&#x683C;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#x3002;</p>
@@ -271,8 +271,8 @@
 <pre><code class="lang-python">plot_model_history(history)
 </code></pre>
 <p>&#x8FD0;&#x884C;&#xFF0C;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g4zn5gyslbj30or099t9j.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
-<p>&#x4F1A;&#x770B;&#x5230;&#x8BAD;&#x7EC3;&#x96C6;&#x7684;&#x7ED3;&#x679C;&#x8FD8;&#x4E0D;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x6D4B;&#x8BD5;&#x96C6;&#x7684;&#x6548;&#x679C;&#x5F88;&#x5DEE;&#xFF0C;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x6B63;&#x786E;&#x7387;&#x3002;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x6211;&#x4EEC; <strong>&#x8C03;&#x6574;&#x6A21;&#x578B;&#x7ED3;&#x6784;</strong> &#x3002;</p>
+<p><img src="asset/c321013.png" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p>&#x4F1A;&#x770B;&#x5230;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x9A8C;&#x8BC1;&#x96C6;&#x7684;&#x6548;&#x679C;&#x90FD;&#x4E0D;&#x592A;&#x597D;&#x3002;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x6211;&#x4EEC; <strong>&#x8C03;&#x6574;&#x6A21;&#x578B;&#x7ED3;&#x6784;</strong> &#x3002;</p>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
 <p>1.&#x8BAD;&#x7EC3;&#x9996;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF1A;&#x57FA;&#x672C;&#x5206;&#x7C7B; <a href="https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn" target="_blank">https://www.tensorflow.org/tutorials/keras/basic_classification?hl=zh-cn</a></p>
 
@@ -318,7 +318,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.评估模型","level":"1.5","depth":1,"next":{"title":"6.调整模型","level":"1.6","depth":1,"path":"6_adjustment.md","ref":"6_adjustment.md","articles":[]},"previous":{"title":"4.训练模型","level":"1.4","depth":1,"path":"4_training.md","ref":"4_training.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5_evaluating.md","mtime":"2019-07-17T08:17:45.398Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-23T08:52:10.502Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.评估模型","level":"1.5","depth":1,"next":{"title":"6.调整模型","level":"1.6","depth":1,"path":"6_adjustment.md","ref":"6_adjustment.md","articles":[]},"previous":{"title":"4.训练模型","level":"1.4","depth":1,"path":"4_training.md","ref":"4_training.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5_evaluating.md","mtime":"2021-05-24T01:48:40.228Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-24T02:20:56.072Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

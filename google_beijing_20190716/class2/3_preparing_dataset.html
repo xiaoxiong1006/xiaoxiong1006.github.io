@@ -239,77 +239,101 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="3-&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;">3. &#x6570;&#x636E;&#x9884;&#x5904;&#x7406;</h1>
-<p>&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; <code>python&#x51FD;&#x6570;</code> &#x6765;&#x8F93;&#x51FA; numpy ndarray &#x7684;&#x968F;&#x673A;&#x51E0;&#x884C;&#xFF0C;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x5728;&#x540E;&#x7EED;&#x67E5;&#x770B;numpy&#x6570;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
-<p>&#x9009;&#x4E2D; <code>2.2 &#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_ndarray_random_rows</span><span class="hljs-params">(array_name,rows=<span class="hljs-number">5</span>)</span>:</span>
-    <span class="hljs-string">&apos;&apos;&apos;
-    &#x529F;&#x80FD;&#xFF1A;&#x8F93;&#x51FA;numpy ndarray &#x7684;&#x968F;&#x673A;&#x51E0;&#x884C;
-    &#x53C2;&#x6570;&#xFF1A;array_name &#x6570;&#x7EC4;&#x540D;&#x79F0;
-         rows &#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x5E26;&#x5165;&#x503C;&#x65F6;&#x9ED8;&#x8BA4;&#x4E3A;5
-    &apos;&apos;&apos;</span>
-    <span class="hljs-keyword">if</span> array_name.ndim &gt;<span class="hljs-number">1</span> :
-        print(array_name[np.random.choice(array_name.shape[<span class="hljs-number">0</span>], rows, replace=<span class="hljs-keyword">False</span>), :])
-    <span class="hljs-keyword">else</span>:
-        print(array_name[np.random.choice(array_name.shape[<span class="hljs-number">0</span>], rows, replace=<span class="hljs-keyword">False</span>)])
-    <span class="hljs-keyword">return</span>
-</code></pre>
-<p>&#x8FD0;&#x884C;&#x5355;&#x5143;&#x683C;&#x3002;&#x672C;&#x5355;&#x5143;&#x683C;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#x8F93;&#x51FA;&#x3002;</p>
-<h2 id="31-&#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;">3.1 &#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;</h2>
-<p>&#x5C06;&#x5BFC;&#x5165;&#x5230; <code>DataFrame</code> &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x9996;&#x5148;&#x8F6C;&#x5316;&#x4E3A; numpy &#x7684; <a href="https://www.numpy.org.cn/article/basics/python_numpy_tutorial.html#%E6%95%B0%E7%BB%84(Arrays" target="_blank">ndarray</a>) &#x7C7B;&#x578B;&#x3002;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;&#x7684;&#x5206;&#x5272;&#x3002;</p>
-<p>&#x7EE7;&#x7EED;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-comment"># &#x8F6C;&#x6362;&#x4E3A;np.array</span>
-iris = np.array(iris)
-print(<span class="hljs-string">&quot;\n=====&#x6570;&#x636E;&#x96C6;&#x62BD;&#x6837;&#x663E;&#x793A;=====&quot;</span>)
-print_ndarray_random_rows(iris)
-
-<span class="hljs-comment"># &#x63D0;&#x53D6;&#x7279;&#x5F81;</span>
-X= iris[:,<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]
-print(<span class="hljs-string">&quot;\n=====&#x7279;&#x5F81;&#x62BD;&#x6837;&#x663E;&#x793A;=====&quot;</span>)
-print_ndarray_random_rows(X)
-
-<span class="hljs-comment"># &#x63D0;&#x53D6;&#x6807;&#x7B7E;</span>
-Y = iris[:,<span class="hljs-number">4</span>]
-print(<span class="hljs-string">&quot;\n=====&#x6807;&#x7B7E;&#x62BD;&#x6837;&#x663E;&#x793A;=====&quot;</span>)
-print_ndarray_random_rows(Y)
-</code></pre>
-<p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<p><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4za94zvbkj30h708wmy9.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
-<h2 id="32-&#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;">3.2 &#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;</h2>
-<p>&#x5728;&#x539F;&#x59CB;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x9E22;&#x5C3E;&#x534E;&#x7684;&#x7C7B;&#x522B;&#x662F;&#x5B57;&#x7B26;&#x578B;&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x4E3A;&#x6570;&#x5B57;&#x578B;&#x3002;&#x5728;&#x672C;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x4E09;&#x4E2A;&#x79CD;&#x7C7B;&#x7684;&#x9E22;&#x5C3E;&#x82B1;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x9E22;&#x5C3E;&#x82B1;&#x7684;&#x6807;&#x7B7E;&#x8FDB;&#x884C; one-hot &#x7F16;&#x7801;&#x3002;</p>
+<h2 id="31-&#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;">3.1 &#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;</h2>
+<p>&#x5728;&#x539F;&#x59CB;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x9E22;&#x5C3E;&#x82B1;&#x7684;&#x7C7B;&#x522B;&#x662F;&#x5B57;&#x7B26;&#x578B;&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x4E3A;&#x6570;&#x503C;&#x578B;&#x3002;&#x5728;&#x672C;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x4E09;&#x4E2A;&#x79CD;&#x7C7B;&#x7684;&#x9E22;&#x5C3E;&#x82B1;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x9E22;&#x5C3E;&#x82B1;&#x7684;&#x6807;&#x7B7E;&#x8FDB;&#x884C; one-hot &#x7F16;&#x7801;&#x3002;</p>
 <p>&#x91C7;&#x7528; one-hot &#x7F16;&#x7801;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://www.jqr.com/article/000243" target="_blank">&#x4EC0;&#x4E48;&#x662F;one hot&#x7F16;&#x7801;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;one hot&#x7F16;&#x7801;&#xFF1F;</a></p>
-<p>&#x9009;&#x4E2D; <code>2.3 &#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-comment"># &#x5C06;&#x6587;&#x672C;&#x578B;&#x7C7B;&#x522B;&#x8F6C;&#x4E3A;&#x4E3A;&#x6570;&#x5B57;&#x578B;&#x7C7B;&#x522B;</span>
-encoder = LabelEncoder()
-encoder_Y = encoder.fit_transform(Y)
-print(<span class="hljs-string">&quot;\n=====&#x6807;&#x7B7E;&#x6570;&#x503C;&#x5316;&#x7684;&#x7ED3;&#x679C;=====&quot;</span>)
-print_ndarray_random_rows(encoder_Y)
-
-<span class="hljs-comment"># &#x8F6C;&#x5316;&#x4E3A; one-hot &#x7F16;&#x7801;</span>
-dummy_y = np_utils.to_categorical(encoder_Y)
-print(<span class="hljs-string">&quot;\n=====&#x6807;&#x7B7E;&#x7684;one-hot&#x7F16;&#x7801;=====&quot;</span>)
-print_ndarray_random_rows(dummy_y)
+<p>&#x9009;&#x4E2D; <code>2.2 &#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x5316;&#x4E3A;one-hot&#x7F16;&#x7801;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x5BF9;species&#x8FDB;&#x884C;one-hot&#x7F16;&#x7801;</span>
+one_hot_species = pd.get_dummies(iris[<span class="hljs-string">&apos;species&apos;</span>], prefix=<span class="hljs-string">&apos;species&apos;</span>)
+<span class="hljs-comment"># &#x968F;&#x673A;&#x8F93;&#x51FA;5&#x884C;&#xFF0C;&#x67E5;&#x770B;&#x6548;&#x679C;</span>
+one_hot_species.sample(<span class="hljs-number">5</span>)
 </code></pre>
 <p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;
-<img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4zachoy9tj30b8053q36.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<img src="asset/c321002.png" width="480"></p>
+<blockquote>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.get_dummies.html" target="_blank">get_dummies</a>&#x662F;pandas&#x5B9E;&#x73B0;one-hot&#x7F16;&#x7801;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;<code>prefix</code>&#x53C2;&#x6570;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x589E;&#x52A0;&#x5217;&#x7684;&#x524D;&#x7F00;&#x3002;</p>
+</blockquote>
+<p>&#x7EE7;&#x7EED;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#  &#x4E0E;&#x539F;&#x6765;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x62FC;&#x63A5;</span>
+one_hot_data = pd.concat([iris,one_hot_species], axis=<span class="hljs-number">1</span>)
+<span class="hljs-comment"># &#x968F;&#x673A;&#x8F93;&#x51FA;5&#x884C;&#xFF0C;&#x67E5;&#x770B;&#x6548;&#x679C;</span>
+one_hot_data.sample(<span class="hljs-number">5</span>)
+</code></pre>
+<p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;
+<img src="asset/c321003.png"></p>
+<blockquote>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.concat.html" target="_blank">concat</a>&#x51FD;&#x6570;&#x7528;&#x6765;&#x62FC;&#x63A5;pandas&#x7684;&#x5BF9;&#x8C61;&#xFF08;dataframe&#x7B49;&#xFF09;&#xFF0C;&#x53C2;&#x6570;<code>axis</code>&#x7528;&#x6765;&#x6307;&#x5B9A;&#x62FC;&#x63A5;&#x7684;&#x65B9;&#x5411;&#xFF0C;<code>axis=1</code>&#x4EE3;&#x8868;&#x6A2A;&#x884C;&#x62FC;&#x63A5;</p>
+</blockquote>
+<p>&#x7EE7;&#x7EED;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#  &#x5220;&#x9664;&#x539F;&#x6765;&#x7684;species&#x5217;</span>
+one_hot_data = one_hot_data.drop(<span class="hljs-string">&apos;species&apos;</span>, axis=<span class="hljs-number">1</span>)
+<span class="hljs-comment"># &#x968F;&#x673A;&#x8F93;&#x51FA;5&#x884C;&#xFF0C;&#x67E5;&#x770B;&#x6548;&#x679C;</span>
+one_hot_data.sample(<span class="hljs-number">5</span>)
+</code></pre>
+<blockquote>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html" target="_blank">drop</a>&#x7528;&#x6765;&#x5220;&#x9664;&#x7279;&#x5B9A;&#x7684;&#x884C;&#x6216;&#x8005;&#x5217;&#x3002;&#x53C2;&#x6570;<code>axis</code>&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5220;&#x9664;&#x7684;&#x65B9;&#x5411;&#xFF0C;<code>axis=1</code>&#x4EE3;&#x8868;&#x5220;&#x9664;&#x884C;</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;
+<img src="asset/c321004.png" width="900"></p>
+<p>&#x5230;&#x6B64;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x5C06;&#x6807;&#x7B7E;&#x8F6C;&#x6362;&#x4E3A;one-hot&#x7F16;&#x7801;&#x7684;&#x6570;&#x636E;&#x96C6;&#x3002;</p>
+<p>&#x5220;&#x9664;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x4E09;&#x6BB5;&#x4EE3;&#x7801;&#x6574;&#x7406;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#  &#x5BF9;species&#x8FDB;&#x884C;one-hot&#x7F16;&#x7801;</span>
+one_hot_species = pd.get_dummies(iris[<span class="hljs-string">&apos;species&apos;</span>], prefix=<span class="hljs-string">&apos;species&apos;</span>)
+<span class="hljs-comment">#  &#x539F;&#x6765;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x62FC;&#x63A5;</span>
+one_hot_data = pd.concat([iris,one_hot_species], axis=<span class="hljs-number">1</span>)
+<span class="hljs-comment">#  &#x5220;&#x9664;&#x539F;&#x6765;&#x7684;species&#x5217;</span>
+one_hot_data = one_hot_data.drop(<span class="hljs-string">&apos;species&apos;</span>, axis=<span class="hljs-number">1</span>)
+<span class="hljs-comment">#  &#x968F;&#x673A;&#x8F93;&#x51FA;5&#x884C;&#xFF0C;&#x67E5;&#x770B;&#x6548;&#x679C;</span>
+one_hot_data.sample(<span class="hljs-number">5</span>)
+</code></pre>
+<h2 id="32-&#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;">3.2 &#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;</h2>
+<p>&#x9009;&#x4E2D; <code>2.3 &#x5206;&#x5272;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x63D0;&#x53D6;&#x7279;&#x5F81;&#xFF0C;&#x524D;4&#x5217;&#x4E3A;&#x7279;&#x5F81;</span>
+features = one_hot_data.iloc[:,<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]
+print(<span class="hljs-string">&quot;\n=====&#x663E;&#x793A;&#x524D;5&#x884C;&#x7279;&#x5F81;=====&quot;</span>)
+print(features.head())
+</code></pre>
+<blockquote>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html" target="_blank">iloc</a>&#x7528;&#x4E8E;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x6765;&#x83B7;&#x53D6;dataframe&#x4E2D;&#x7684;&#x884C;&#x548C;&#x5217;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;iloc&#x540E;&#x9762;&#x901A;&#x8FC7;&#x5207;&#x7247;&#x8FD0;&#x7B97;&#x83B7;&#x53D6;&#x4E86;&#x6240;&#x6709;&#x7684;&#x884C;&#x7684;&#x524D;&#x56DB;&#x5217;&#xFF08;&#x7B2C;&#x4E00;&#x4E2A;&#xFF1A;&#x4EE3;&#x8868;&#x6240;&#x6709;&#x884C;&#xFF0C;&#x9017;&#x53F7;&#x540E;&#x7684;0:4&#x4EE3;&#x8868;&#x524D;4&#x5217;&#xFF09;&#xFF0C;</p>
+</blockquote>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="asset/c321006.png" width="600"></p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x63D0;&#x53D6;&#x6807;&#x7B7E;&#xFF0C;&#x540E;3&#x5217;&#x4E3A;&#x6807;&#x7B7E;</span>
+labels = one_hot_data.iloc[:,<span class="hljs-number">4</span>:]
+print(<span class="hljs-string">&quot;\n=====&#x663E;&#x793A;&#x524D;5&#x884C;&#x6807;&#x7B7E;=====&quot;</span>)
+print(labels.head())
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="asset/c321007.png" width="720"></p>
+<p>&#x5C06;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;&#x4ECE;dataframe&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;numpy array&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4FBF;&#x4E8E;&#x5728;&#x6A21;&#x578B;&#x4E2D;&#x8FD0;&#x7B97;</p>
+<pre><code class="lang-python">features = np.array(features)
+labels = np.array(labels)
+</code></pre>
+<p>&#x67E5;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x7279;&#x5F81;&#x548C;&#x6807;&#x7B7E;&#x7684;&#x5F62;&#x72B6;</p>
+<pre><code class="lang-python">print(<span class="hljs-string">&quot;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span>,features.shape)
+print(<span class="hljs-string">&quot;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span>,labels.shape)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="asset/c321008.png" width="240"></p>
 <h2 id="33&#x62C6;&#x5206;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;">3.3.&#x62C6;&#x5206;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</h2>
 <p>&#x5728;&#x5BFC;&#x5305;&#x4EE3;&#x7801;&#x4E0B;&#x9762;&#xFF0C;&#x63D2;&#x5165;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5E76;&#x8FD0;&#x884C;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-comment">## &#x8D85;&#x53C2;&#x6570;</span>
 test_size=<span class="hljs-number">0.25</span>
 </code></pre>
 <p>&#x4EE3;&#x7801;&#x7684;&#x4F4D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g4zm5sc18pj30ii08amyb.jpg" alt="&#x4EE3;&#x7801;&#x7684;&#x4F4D;&#x7F6E;"></p>
+<p><img src="asset/c321010.jpeg" alt="&#x4EE3;&#x7801;&#x7684;&#x4F4D;&#x7F6E;"></p>
 <p>&#x9009;&#x4E2D; <code>2.4 &#x5206;&#x5272;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</code> &#x5355;&#x5143;&#x683C;&#xFF0C;&#x63D2;&#x5165;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5355;&#x5143;&#x683C;&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x62C6;&#x5206;&#x8BAD;&#x7EC3;&#x96C6;&#x548C;&#x6D4B;&#x8BD5;&#x96C6;</span>
-X_train,X_test,y_train,y_test = train_test_split(X,dummy_y,test_size=test_size)
+X_train,X_test,y_train,y_test = train_test_split(features,labels,test_size=test_size)
 print(<span class="hljs-string">&quot;&#x8BAD;&#x7EC3;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(X_train.shape))
 print(<span class="hljs-string">&quot;&#x8BAD;&#x7EC3;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(y_train.shape))
 print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7279;&#x5F81;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(X_test.shape))
 print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x6807;&#x7B7E;&#x96C6;&#x7684;&#x5F62;&#x72B6;&#xFF1A;&quot;</span> + str(y_test.shape))
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;  </p>
-<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4zamwp4ybj30bs021q35.jpg" alt="&#x8FD0;&#x884C;&#x7ED3;&#x679C;"></p>
+<p><img src="asset/c321009.png" width="320"></p>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
-<p>1.python&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;(&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x3001;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x3001;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x548C;&#x53C2;&#x6570;&#x7EC4;&#x5408;) <a href="https://blog.csdn.net/zxy987872674/article/details/55252501" target="_blank">https://blog.csdn.net/zxy987872674/article/details/55252501</a></p>
+<p>1.python&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;(&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x3001;&#x53EF;&#x53D8;&#x53C2;&#x6570;&#x3001;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x548C;&#x53C2;&#x6570;&#x7EC4;&#x5408;) <a href="https://blog.csdn.net/zxy987872674/article/details/55252501" target="_blank">https://blog.csdn.net/zxy987872674/article/details/55252501</a>    2.pandas.get<em>dummies &#x7684;&#x7528;&#x6CD5; <a href="https://blog.csdn.net/maymay" target="_blank">https://blog.csdn.net/maymay</a></em>/article/details/80198468</p>
 
                                 
                                 </section>
@@ -353,7 +377,7 @@ print(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x6807;&#x7B7E;&#x96C6;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.数据预处理","level":"1.3","depth":1,"next":{"title":"4.训练模型","level":"1.4","depth":1,"path":"4_training.md","ref":"4_training.md","articles":[]},"previous":{"title":"2.导入数据","level":"1.2","depth":1,"path":"2_import_dataset.md","ref":"2_import_dataset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3_preparing_dataset.md","mtime":"2019-07-14T12:00:01.315Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-23T08:52:10.502Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.数据预处理","level":"1.3","depth":1,"next":{"title":"4.训练模型","level":"1.4","depth":1,"path":"4_training.md","ref":"4_training.md","articles":[]},"previous":{"title":"2.导入数据","level":"1.2","depth":1,"path":"2_import_dataset.md","ref":"2_import_dataset.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3_preparing_dataset.md","mtime":"2021-05-24T01:15:23.560Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-24T02:20:56.072Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
